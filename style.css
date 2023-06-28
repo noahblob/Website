@@ -88,7 +88,7 @@ main {
   margin-left: 1rem;
 }
 
-.nav-link svg {
+.nav-link object {
   min-width: 2rem;
   margin: 0 1.5rem;
 }
@@ -116,23 +116,46 @@ section {
   scroll-snap-align: start;
 }
 
-.child:nth-child(odd) {
+.child {
   background-color: white;
   font-family: sans-serif;
-  font-size: 100px;
+  text-align: justify;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.child:nth-child(even) {
-  background-color: black;
-  color: white;
-  font-size: 100px;
-  font-family: sans-serif;
+.selfie {
+  width: 200px;
+  border-radius: 50%;
+}
+
+.img-with-text {
+  text-align: center;
+  width: 60%;
+}
+
+.img-with-text img {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.icons {
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+  width: 100%;
+}
+
+.icons svg {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.icons svg:hover {
+  fill: grey;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -148,5 +171,5 @@ section {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background-color: #555;
 }
