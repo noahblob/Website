@@ -1,6 +1,6 @@
 html,
 body {
-  overflow-x:hidden;
+  overflow: hidden;
   padding: 0;
   margin: 0;
 }
@@ -88,7 +88,7 @@ main {
   margin-left: 1rem;
 }
 
-.nav-link object {
+.nav-link > object {
   min-width: 2rem;
   margin: 0 1.5rem;
 }
@@ -135,7 +135,7 @@ section {
   width: 60%;
 }
 
-.img-with-text img {
+.img-with-text > img {
   display: block;
   margin: 0 auto;
   padding: 5px;
@@ -148,18 +148,19 @@ section {
   width: 100%;
 }
 
-.icons svg {
+.icons > svg {
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.icons svg:hover {
+.icons > svg:hover {
   fill: grey;
   cursor: pointer;
 }
 
 ::-webkit-scrollbar {
   width: 0.25rem;
+  height: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -172,4 +173,31 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
+}
+
+.media-scroller {
+  --spacer: 1rem;
+  display: grid;
+  gap: var(--spacer);
+  padding: 0 var(--spacer) var(--spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.media-element {
+  display: grid;
+  gap: var(--spacer);
+  padding: var(--spacer);
+  text-align: center;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--spacer);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
 }
