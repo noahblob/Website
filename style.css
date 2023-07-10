@@ -1,6 +1,7 @@
 body {
-  --nav-height: 50px;
-  padding-top: var(--nav-height);
+  /* --nav-height: 50px;
+  padding-top: var(--nav-height); */
+  background-color: #88CEEB;
   font-family: 'Montserrat', sans-serif;
   padding: 0;
   margin: 0;
@@ -15,7 +16,7 @@ body {
   background: #333;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
 }
 
@@ -44,10 +45,36 @@ body {
   place-items: center;
   align-content: center;
   min-height: 100vh;
-  background-color: white;
+  background-color: #84CEEB;
   align-items: center;
   justify-content: center;
   display: flex;
+}
+
+.intro {
+  font-weight: 10;
+  top: 40%;
+  position: absolute;
+  animation: slideInLeft 0.5s;
+  width: 40%;
+  color: #D1E8E2;
+}
+
+.intro>span {
+  font-weight: 800;
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: block;
+  background-color: #0e4166;
+  background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .selfie {
@@ -58,10 +85,9 @@ body {
 .img-with-text {
   text-align: center;
   width: 60%;
-  animation: slideInLeft 0.5s;
 }
 
-.img-with-text > img {
+.img-with-text>img {
   display: block;
   margin: 0 auto;
   padding: 5px;
@@ -74,12 +100,12 @@ body {
   width: 100%;
 }
 
-.icons > a {
+.icons>a {
   padding-left: 2px;
   padding-right: 2px;
 }
 
-.icons > a:hover {
+.icons>a:hover {
   fill: grey;
   cursor: pointer;
 }
@@ -103,6 +129,7 @@ body {
 
 .media-scroller {
   --spacer: 1rem;
+  min-height: 100vh;
   display: grid;
   gap: var(--spacer);
   padding: 0 var(--spacer) var(--spacer);
@@ -110,6 +137,7 @@ body {
   grid-auto-columns: 100%;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  position: relative;
 }
 
 .media-element {
@@ -119,13 +147,100 @@ body {
   text-align: center;
 }
 
+
 .snaps-inline {
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: var(--spacer);
 }
 
-.snaps-inline > * {
+.snaps-inline>* {
   scroll-snap-align: start;
+}
+
+.scroller-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #0e4166;
+}
+
+.tabs input {
+  visibility: hidden;
+  display: none;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10000000;
+}
+
+.buttons label {
+  width: 20px;
+  height: 20px;
+  background: #D1E8E2;
+  opacity: 0.5;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.tabs input:nth-child(1):checked ~ .buttons label:nth-child(1), .tabs input:nth-child(2):checked ~ .buttons label:nth-child(2), .tabs input:nth-child(3):checked ~ .buttons label:nth-child(3) {
+  opacity: 1;
+  width: 50px;
+}
+
+.content {
+  position: relative;
+  width: 300vw;
+  display: flex;
+  transition: 0.5s;
+}
+
+.content .box {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: 40px;
+}
+
+.tabs input:nth-child(1):checked ~ .content {
+  margin-left: 0;
+}
+
+.tabs input:nth-child(2):checked ~ .content {
+  margin-left: -100vw;
+}
+
+.tabs input:nth-child(3):checked ~ .content {
+  margin-left: -200vw;
+}
+
+.content .box .contentBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.content .box .contentBox h2 {
+  font-size: 3em;
+  color: #D1E8E2;
+}
+
+.content .box .contentBox p {
+  font-size: 1.2em;
+  color: #D1E8E2;
 }
 
 .contact-form {
@@ -138,13 +253,14 @@ body {
   border-radius: 10px;
 }
 
-.contact-form > h3 {
+.contact-form>h3 {
   color: black;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
-.contact-form > input, .contact-form > textarea {
+.contact-form>input,
+.contact-form>textarea {
   background: #e8e8e8;
   border: none;
   padding: 20px;
@@ -156,7 +272,7 @@ body {
   resize: none;
 }
 
-.contact-form > button {
+.contact-form>button {
   padding: 15px;
   color: #15ad17;
   background-color: #a0ff99;
@@ -171,7 +287,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.contact-form > button:hover {
+.contact-form>button:hover {
   transform: translateY(-5px);
   background-color: #15ad17;
   color: white;
@@ -183,20 +299,21 @@ body {
     transform: translateX(-50px);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-.reveal{
+.reveal {
   position: relative;
   transform: translateY(150px);
   opacity: 0;
   transition: 1s all ease;
 }
 
-.reveal.active{
+.reveal.active {
   transform: translateY(0);
   opacity: 1;
 }
