@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My Website</title>
+  <title>noahhagardent</title>
+
+  <!-- CSS Stylesheet -->
   <link defer rel="stylesheet" href="style.css">
+
+  <!-- Custom font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -19,7 +23,7 @@
     <a href="resume.html">Resume</a>
     <a href="#contact">Contact</a>
   </nav>
-  
+
   <main>
     <div class="container">
       <a id="home" />
@@ -39,49 +43,58 @@
                   d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
               </svg></a>
           </div>
-          <p>Hi there! I'm Noah Hagar-Dent, a second year BE(Hons) student at the University of Auckland specialising in
+          <p>Hi there! I'm Noah Hagar-Dent, a second year BE(Hons) student at the University of Auckland specialising
+            in
             Software Engineering. </p>
         </div>
       </section>
       <a id="projects" />
-      <section class="child">
-        <div class="media-scroller snaps-inline">
-          <div class="media-element">
-            <h1>Graph Calculator</h1>
-            <p>A useful tool for calculating graph properties such as transitivity, reflexivity, symmetry and
-              antisymmetry as well as perform breadth-first-search and depth-first-search on graphs</p>
+      <div class="reveal">
+        <section class="child">
+          <div class="media-scroller snaps-inline">
+            <div class="media-element">
+              <h1>Graph Calculator</h1>
+              <p>A useful tool for calculating graph properties such as transitivity, reflexivity, symmetry and
+                antisymmetry as well as perform breadth-first-search and depth-first-search on graphs</p>
+            </div>
+            <div class="media-element">
+              <h1>Morra</h1>
+              <p>A java implementation of the classic Italian hand game, Morra</p>
+            </div>
+            <div class="media-element">
+              <h1>Plagiarism Checker</h1>
+              <p>A MATLAB program that compares two pieces of code for similarities using the winnowing algorithm,
+                returning a similarity score as a percentage of similar content across code</p>
+            </div>
           </div>
-          <div class="media-element">
-            <h1>Morra</h1>
-            <p>A java implementation of the classic Italian hand game, Morra</p>
-          </div>
-          <div class="media-element">
-            <h1>Plagiarism Checker</h1>
-            <p>A MATLAB program that compares two pieces of code for similarities using the winnowing algorithm,
-              returning a similarity score as a percentage of similar content across code</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <a id="contact" />
-      <section class="child">
-        <form class="contact-form" action="https://formsubmit.co/noahhagardent@gmail.com" method="POST">
-          <!-- Honeypot -->
-          <input type="text" name="_honey" style="display:none">
+      <div class="reveal">
+        <section class="child">
 
-          <!-- Disable Captcha -->
-          <input type="hidden" name="_captcha" value="false">
+          <form class="contact-form" action="https://formsubmit.co/noahhagardent@gmail.com" method="POST">
+            <!-- Honeypot -->
+            <input type="text" name="_honey" style="display:none">
 
-          <input type="hidden" name="_next" value="https://noahblob.github.io/#contact">
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
 
-          <h3>GET IN TOUCH</h3>
-          <input type="text" name="name" id="name" placeholder="Your Name" required>
-          <input type="text" name="email" id="email" placeholder="Your Email" required>
-          <textarea name="message" id="message" rows="4" placeholder="Your Message"></textarea>
-          <button type="submit" name="send">Send</button>
-        </form>
-      </section>
+            <!-- Redirect on form submission -->
+            <input type="hidden" name="_next" value="https://noahblob.github.io/#contact">
+
+            <h2>Get In Touch</h2>
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="text" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" rows="4" placeholder="Your Message"></textarea>
+            <button type="submit" name="send">Send</button>
+          </form>
+        </section>
+      </div>
     </div>
   </main>
+
+  <!-- JS -->
   <script src="script.js"></script>
 </body>
 
