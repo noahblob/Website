@@ -7,39 +7,6 @@ body {
   margin: 0;
 }
 
-.navbar {
-  width: 100%;
-  height: var(--nav-height);
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #333;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
-}
-
-.navbar a {
-  font-size: 1.1em;
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-}
-
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.navbar--hidden {
-  transform: translateY(calc(-1 * var(--nav-height)));
-  box-shadow: none;
-}
-
 .child {
   display: grid;
   place-items: center;
@@ -77,6 +44,28 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.left {
+  width: 50%;
+  padding-left: 1rem;
+  float: right;
+}
+
+.right {
+  width: 50%;
+  padding-left: 1rem;
+  float:left;
+}
+
+.right > h2 {
+  font-size: 2em;
+  color: #0e4166;
+}
+
+.right .icons {
+  width: 20%;
+  float: left;
+}
+
 .selfie {
   width: 200px;
   border-radius: 50%;
@@ -84,13 +73,20 @@ body {
 
 .img-with-text {
   text-align: center;
-  width: 60%;
+  width: 50%;
+  float: right;
+  padding-right: 3rem;
+  border-right: 2px solid #0e4166;
 }
 
 .img-with-text>img {
-  display: block;
   margin: 0 auto;
   padding: 5px;
+}
+
+.img-with-text>p {
+  font-size: 1.2em;
+  color: #0e4166;
 }
 
 .icons {
@@ -103,11 +99,21 @@ body {
 .icons>a {
   padding-left: 2px;
   padding-right: 2px;
+  fill: #0e4166;
 }
 
 .icons>a:hover {
-  fill: grey;
+  fill: #D1E8E2;
   cursor: pointer;
+}
+
+.right .icons > img {
+  width: 2rem;
+  height: 2rem;
+  fill: #0e4166;
+  padding: 4px;
+  margin-left: 0.2rem;
+  background-color: #D1E8E2;
 }
 
 ::-webkit-scrollbar {
@@ -127,42 +133,13 @@ body {
   background-color: #555;
 }
 
-.media-scroller {
-  --spacer: 1rem;
-  min-height: 100vh;
-  display: grid;
-  gap: var(--spacer);
-  padding: 0 var(--spacer) var(--spacer);
-  grid-auto-flow: column;
-  grid-auto-columns: 100%;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  position: relative;
-}
-
-.media-element {
-  display: grid;
-  gap: var(--spacer);
-  padding: var(--spacer);
-  text-align: center;
-}
-
-
-.snaps-inline {
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: var(--spacer);
-}
-
-.snaps-inline>* {
-  scroll-snap-align: start;
-}
-
 .scroller-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: #0e4166;
+  background: linear-gradient(90deg, #0e4166, rgba(76, 190, 255, 0.6));
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .tabs input {
