@@ -1,6 +1,4 @@
 body {
-  /* --nav-height: 50px;
-  padding-top: var(--nav-height); */
   background-color: #88CEEB;
   font-family: 'Montserrat', sans-serif;
   padding: 0;
@@ -18,11 +16,12 @@ body {
   display: flex;
 }
 
+/* Styling for landing page */
 .intro {
   font-weight: 10;
   top: 40%;
   position: absolute;
-  animation: slideInLeft 0.5s;
+  animation: slideInLeft 1s;
   width: 40%;
   color: #D1E8E2;
 }
@@ -44,6 +43,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+/* Styling for short introduction section */
 .left {
   width: 50%;
   padding-left: 1rem;
@@ -54,6 +54,8 @@ body {
   width: 50%;
   padding-left: 1rem;
   float:left;
+  display: flex;
+  flex-direction: column;
 }
 
 .right > h2 {
@@ -61,9 +63,21 @@ body {
   color: #0e4166;
 }
 
-.right .icons {
-  width: 20%;
+.right .tech-icons > svg {
+  width: 50px;
+  height: 50px;
+  padding: 4px;
+  margin: 0 10px 10px 0;
+  color: #0e4166;
+  background-color: #D1E8E2;
+  border-radius: 10%;
   float: left;
+}
+
+.right > p {
+  font-size: 1.2em;
+  color: #0e4166;
+  width: 50%;
 }
 
 .selfie {
@@ -71,7 +85,7 @@ body {
   border-radius: 50%;
 }
 
-.img-with-text {
+.left .img-with-text {
   text-align: center;
   width: 50%;
   float: right;
@@ -79,43 +93,35 @@ body {
   border-right: 2px solid #0e4166;
 }
 
-.img-with-text>img {
+.left .img-with-text>img {
   margin: 0 auto;
   padding: 5px;
 }
 
-.img-with-text>p {
+.left .img-with-text>p {
   font-size: 1.2em;
   color: #0e4166;
 }
 
-.icons {
+.left .img-with-text .icons {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.icons>a {
+.left .img-with-text .icons>a {
   padding-left: 2px;
   padding-right: 2px;
   fill: #0e4166;
 }
 
-.icons>a:hover {
+.left .img-with-text .icons>a:hover {
   fill: #D1E8E2;
   cursor: pointer;
 }
 
-.right .icons > img {
-  width: 2rem;
-  height: 2rem;
-  fill: #0e4166;
-  padding: 4px;
-  margin-left: 0.2rem;
-  background-color: #D1E8E2;
-}
-
+/* Styling for scrollbar */
 ::-webkit-scrollbar {
   width: 0.25rem;
   height: 0.25rem;
@@ -133,6 +139,7 @@ body {
   background-color: #555;
 }
 
+/* Styling for projects section */
 .scroller-container {
   position: relative;
   width: 100%;
@@ -208,6 +215,8 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 10px;
+  width: 50%;
+  text-align: center;
 }
 
 .content .box .contentBox h2 {
@@ -220,26 +229,25 @@ body {
   color: #D1E8E2;
 }
 
+/* Styling for contact form */
 .contact-form {
-  background: #c2c2c2;
   display: flex;
   flex-direction: column;
   padding: 2vw 4vw;
   width: 90%;
   max-width: 600px;
-  border-radius: 10px;
 }
 
-.contact-form>h3 {
-  color: black;
+.contact-form>h2 {
+  color: #0e4166;
   font-weight: 800;
   margin-bottom: 20px;
 }
 
 .contact-form>input,
 .contact-form>textarea {
-  background: #e8e8e8;
-  border: none;
+  background: #D1E8E2;
+  border: solid 2px #0e4166;
   padding: 20px;
   margin: 10px 0;
   border-radius: 4px;
@@ -249,28 +257,31 @@ body {
   resize: none;
 }
 
+::placeholder {
+  color: #0e4166;
+}
+
 .contact-form>button {
   padding: 15px;
-  color: #15ad17;
-  background-color: #a0ff99;
-  border: 5px solid #15ad17;
-  border-radius: 15px;
+  color: #D1E8E2;
+  background-color: #0e4166;
+  border: solid 2px #0e4166;
+  border-radius: 30px;
   font-size: 18px;
   outline: none;
   cursor: pointer;
   width: 150px;
   margin: 20px auto 0;
-  transition: all 0.3s;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.contact-form>button:hover {
+/* .contact-form>button:hover {
   transform: translateY(-5px);
   background-color: #15ad17;
   color: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
+} */
 
+/* Animation for landing page */
 @keyframes slideInLeft {
   from {
     transform: translateX(-50px);
@@ -283,6 +294,7 @@ body {
   }
 }
 
+/* Transition for revealing concurrent sections of webpage smoothly */
 .reveal {
   position: relative;
   transform: translateY(150px);
